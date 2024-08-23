@@ -20,7 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.wordle.ui.components.title
-import okhttp3.internal.wait
 
 @Composable
 fun home(navController: NavController){
