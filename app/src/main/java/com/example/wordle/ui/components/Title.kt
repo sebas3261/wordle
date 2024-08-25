@@ -22,9 +22,7 @@ import com.example.wordle.R
 
 @Composable
 fun title(){
-    val geologicaFont = FontFamily(
-        Font(R.font.font)
-    )
+    val geologicaFont = FontFamily(Font(R.font.font))
     Row(
         modifier = Modifier
             .height(100.dp)
