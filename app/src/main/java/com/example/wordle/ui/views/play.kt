@@ -42,7 +42,6 @@ fun play(navController: NavController, playViewModel: PlayViewModel) {
     var colors: IntArray = IntArray(5)
     var showNextButton by remember { mutableStateOf(false) }
     var editText by remember { mutableStateOf(true) }
-
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
@@ -106,7 +105,7 @@ fun play(navController: NavController, playViewModel: PlayViewModel) {
                                 showNextButton = true
                                 editText = false
                                 if(playViewModel.won(colors)){
-                                    navController.navigate("home")
+                                    navController.navigate("won")
                                 }
                             }
                         },
@@ -135,7 +134,7 @@ fun play(navController: NavController, playViewModel: PlayViewModel) {
                             showNextButton = false
                             editText = true
                             if(playViewModel.booleanList[6] == true) {
-                                navController.navigate("home")
+                                navController.navigate("lost")
                             }
                         },
                         modifier = Modifier

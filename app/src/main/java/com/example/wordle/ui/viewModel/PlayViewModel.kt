@@ -6,12 +6,19 @@ import androidx.lifecycle.ViewModel
 class PlayViewModel: ViewModel(){
     private val _booleanList = mutableStateListOf(true, false, false, false, false, false, false)
     val booleanList: List<Boolean> = _booleanList
-    var answer = "carro"
+    var answer = "natha"
 
     fun verlong(text: String): Boolean{
         if(text.length == 5)
             return true
         return false
+    }
+
+    fun resetGame(){
+        for (i in 0 until _booleanList.size) {
+            _booleanList[i] = false
+        }
+        _booleanList[0] = true
     }
 
     fun NextValue() {

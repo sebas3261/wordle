@@ -20,9 +20,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.wordle.ui.components.title
+import com.example.wordle.ui.viewModel.PlayViewModel
 
 @Composable
-fun home(navController: NavController){
+fun home(navController: NavController, playViewModel: PlayViewModel){
 
     Box(
         modifier = Modifier
@@ -37,7 +38,7 @@ fun home(navController: NavController){
                 title()
                 Spacer(modifier = Modifier.height(70.dp))
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {  },
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
                         .width(150.dp),
@@ -55,7 +56,7 @@ fun home(navController: NavController){
                     )
                 }
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {  },
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
                         .width(150.dp),
@@ -73,7 +74,10 @@ fun home(navController: NavController){
                     )
                 }
                 Button(
-                    onClick = { navController.navigate("play") },
+                    onClick = {
+                        navController.navigate("play")
+                        playViewModel.resetGame()
+                              },
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
                         .width(150.dp),
